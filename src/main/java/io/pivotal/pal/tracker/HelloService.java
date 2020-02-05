@@ -1,16 +1,21 @@
 package io.pivotal.pal.tracker;
 
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class HelloService {
 
+    private String message;
+
+    public HelloService (@Value("${welcome.message}") String message) {
+        this.message = message;
+    }
+
 
    public String getMessage() {
-       return "Hello from Cloud Foundry";
+       return this.message;
 
     }
 }

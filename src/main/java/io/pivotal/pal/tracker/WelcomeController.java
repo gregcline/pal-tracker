@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 
-    HelloService helloService;
+   private HelloService helloService;
 
-
-    public WelcomeController(@Autowired HelloService helloService) {
+    @Autowired
+    public WelcomeController(HelloService helloService) {
         this.helloService = helloService;
 
     }
