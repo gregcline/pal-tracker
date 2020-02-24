@@ -10,7 +10,7 @@ public class WelcomeController {
     String message;
 
 
-    public WelcomeController(@Value("${welcome.message}") String message ) {
+    public WelcomeController(@Value("${welcome.message:Hello from Cloud Foundry}") String message ) {
         this.message = message;
 
     }
