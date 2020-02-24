@@ -1,5 +1,6 @@
 package io.pivotal.pal.tracker;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 
-    String message;
+    HelloService helloService;
 
 
-    public WelcomeController(@Value("${welcome.message:Hello from Cloud Foundry}") String message ) {
-        this.message = message;
+    public WelcomeController(@Autowired HelloService helloService) {
+        this.helloService = helloService;
 
     }
 
     @GetMapping("/")
     public String sayHello() {
-        return this.message;
+        return this.helloService.getMessage();
     }
 
 }
