@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
+
 public class WelcomeControllerTest {
 
 
@@ -16,6 +17,6 @@ public class WelcomeControllerTest {
         HelloService helloService = mock(HelloService.class);
         WelcomeController controller = new WelcomeController(helloService);
 
-        assertThat(controller.sayHello()).isEqualTo("Hello from Cloud Foundry");
+        assertThat(controller.sayHello()).isEqualTo("Hello from test");
     }
 }
