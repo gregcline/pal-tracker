@@ -1,5 +1,6 @@
 package test.pivotal.pal.tracker;
 
+
 import io.pivotal.pal.tracker.TimeEntry;
 import io.pivotal.pal.tracker.TimeEntryController;
 import io.pivotal.pal.tracker.TimeEntryRepository;
@@ -46,6 +47,7 @@ public class TimeEntryControllerTest {
         assertThat(response.getBody()).isEqualTo(expectedResult);
     }
 
+
     @Test
     public void testRead() {
         long timeEntryId = 1L;
@@ -88,6 +90,7 @@ public class TimeEntryControllerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isEqualTo(expected);
     }
+
 
     @Test
     public void testUpdate() {
