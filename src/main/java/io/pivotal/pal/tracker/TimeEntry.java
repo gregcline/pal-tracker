@@ -5,33 +5,33 @@ import java.util.Objects;
 
 public class TimeEntry {
     private long timeEntryId;
-    private final long projectId;
-    private final long userId;
-    private final LocalDate parse;
-    private final int i;
+    private  long projectId;
+    private  long userId;
+    private  LocalDate date;
+    private  int hours;
 
-    public TimeEntry(long projectId, long userId, LocalDate parse, int i) {
+    public TimeEntry(long projectId, long userId, LocalDate date, int i) {
         this.timeEntryId = 0;
         this.projectId = projectId;
         this.userId = userId;
-        this.parse = parse;
-        this.i = i;
+        this.date = date;
+        this.hours = i;
     }
 
-    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate parse, int i) {
+    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate date, int i) {
         this.timeEntryId = timeEntryId;
         this.projectId = projectId;
         this.userId = userId;
-        this.parse = parse;
-        this.i = i;
+        this.date = date;
+        this.hours = i;
     }
 
     public TimeEntry() {
         this.timeEntryId = 0;
         this.projectId = 111L;
         this.userId = 111L;
-        this.parse = LocalDate.parse("2017-01-08");
-        this.i = 0;
+        this.date = LocalDate.parse("2017-01-08");
+        this.hours = 0;
     }
 
     public long getId() {
@@ -42,6 +42,22 @@ public class TimeEntry {
         this.timeEntryId = ID;
     }
 
+    public long getProjectId() {
+        return projectId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -50,16 +66,25 @@ public class TimeEntry {
         return timeEntryId == timeEntry.timeEntryId &&
                 projectId == timeEntry.projectId &&
                 userId == timeEntry.userId &&
-                i == timeEntry.i &&
-                Objects.equals(parse, timeEntry.parse);
+                hours == timeEntry.hours &&
+                Objects.equals(date, timeEntry.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timeEntryId, projectId, userId, parse, i);
+        return Objects.hash(timeEntryId, projectId, userId, date, hours);
     }
 
 
-
+    @Override
+    public String toString() {
+        return "TimeEntry{" +
+                "id=" + timeEntryId +
+                ", projectId=" + projectId +
+                ", userId=" + userId +
+                ", date='" + date + '\'' +
+                ", hours=" + hours +
+                '}';
+    }
 
 }
