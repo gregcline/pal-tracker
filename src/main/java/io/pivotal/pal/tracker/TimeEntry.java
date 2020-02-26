@@ -10,20 +10,20 @@ public class TimeEntry {
     private  LocalDate date;
     private  int hours;
 
-    public TimeEntry(long projectId, long userId, LocalDate date, int i) {
+    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
         this.timeEntryId = 0;
         this.projectId = projectId;
         this.userId = userId;
         this.date = date;
-        this.hours = i;
+        this.hours = hours;
     }
 
-    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate date, int i) {
+    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate date, int hours) {
         this.timeEntryId = timeEntryId;
         this.projectId = projectId;
         this.userId = userId;
         this.date = date;
-        this.hours = i;
+        this.hours = hours;
     }
 
     public TimeEntry() {
